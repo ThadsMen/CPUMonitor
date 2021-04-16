@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tvmfp8fxmlcpumonitors21.Tvmfp8FXMLCPUMonitorS21ViewController">
+   <children>
+      <StackPane layoutX="36.0" layoutY="14.0" prefHeight="159.0" prefWidth="208.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@Tvmfp8FXMLCPUMonitorDial.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hand" fitHeight="200.0" fitWidth="205.0" rotate="-163.7">
+               <image>
+                  <Image url="@Tvmfp8FXMLCPUMonitorHand.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Text fx:id="cpuText" layoutX="76.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00%" textAlignment="CENTER">
+         <font>
+            <Font name="Goudy Stout" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="startStop" layoutX="76.0" layoutY="290.0" mnemonicParsing="false" onAction="#startStopButton" text="Start" />
+      <Button fx:id="resetRecord" layoutX="153.0" layoutY="290.0" mnemonicParsing="false" onAction="#resetRecordButton" text="Stop" />
+      <Text fx:id="peakText" layoutX="11.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peak CPU Usage: 0.00%" wrappingWidth="283.49609375">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="meanText" layoutX="11.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mean CPU Usage: 0.00%" wrappingWidth="283.49609375">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <LineChart fx:id="lineChart" animated="false" layoutX="262.0" layoutY="57.0" prefHeight="187.0" prefWidth="324.0" title="Recorded Cpu Usage">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" minorTickLength="1.0" side="LEFT" tickLength="1.0" tickUnit="1.0" />
+        </yAxis>
+      </LineChart>
+      <AreaChart fx:id="areaChart" animated="false" layoutX="262.0" layoutY="236.0" prefHeight="187.0" prefWidth="340.0" title="Mean CPU Load">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis2" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis2" autoRanging="false" side="LEFT" />
+        </yAxis>
+      </AreaChart>
+   </children>
+</AnchorPane>
